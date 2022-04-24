@@ -105,6 +105,212 @@
           }
         }
       }
+    },
+    "cricket": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        },
+        "@schematics/angular:application": {
+          "strict": true
+        }
+      },
+      "root": "projects/cricket",
+      "sourceRoot": "projects/cricket/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/cricket",
+            "index": "projects/cricket/src/index.html",
+            "main": "projects/cricket/src/main.ts",
+            "polyfills": "projects/cricket/src/polyfills.ts",
+            "tsConfig": "projects/cricket/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "projects/cricket/src/favicon.ico",
+              "projects/cricket/src/assets"
+            ],
+            "styles": [
+              "projects/cricket/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "projects/cricket/src/environments/environment.ts",
+                  "with": "projects/cricket/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "cricket:build:production"
+            },
+            "development": {
+              "browserTarget": "cricket:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "cricket:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/cricket/src/test.ts",
+            "polyfills": "projects/cricket/src/polyfills.ts",
+            "tsConfig": "projects/cricket/tsconfig.spec.json",
+            "karmaConfig": "projects/cricket/karma.conf.js",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "projects/cricket/src/favicon.ico",
+              "projects/cricket/src/assets"
+            ],
+            "styles": [
+              "projects/cricket/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    },
+    "football": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        },
+        "@schematics/angular:application": {
+          "strict": true
+        }
+      },
+      "root": "projects/football",
+      "sourceRoot": "projects/football/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/football",
+            "index": "projects/football/src/index.html",
+            "main": "projects/football/src/main.ts",
+            "polyfills": "projects/football/src/polyfills.ts",
+            "tsConfig": "projects/football/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "projects/football/src/favicon.ico",
+              "projects/football/src/assets"
+            ],
+            "styles": [
+              "projects/football/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "projects/football/src/environments/environment.ts",
+                  "with": "projects/football/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "football:build:production"
+            },
+            "development": {
+              "browserTarget": "football:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "football:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/football/src/test.ts",
+            "polyfills": "projects/football/src/polyfills.ts",
+            "tsConfig": "projects/football/tsconfig.spec.json",
+            "karmaConfig": "projects/football/karma.conf.js",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "projects/football/src/favicon.ico",
+              "projects/football/src/assets"
+            ],
+            "styles": [
+              "projects/football/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        }
+      }
     }
   },
   "defaultProject": "multiple-apps"
